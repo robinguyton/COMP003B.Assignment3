@@ -7,16 +7,27 @@ namespace COMP003B.Assignment3.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(100)]
-        public string Name { get; set; }
+        [MinLength(3)]
+        public string Full Name { get; set; }
 
         [Range(0.01, 10000)]
 
-        public decimal Price { get; set; }
+        [Required]
+
+        public required string Email;
+        [EmailAddress]
+
+
+        [Required]
+        public decimal Tickets { get; set }
+        [Range(1, 10);
+
+        [Required]
+        public string Category { get; set; }
 
         [Required]
 
-        public string Category { get; set; }
+        
 
     }
 }
