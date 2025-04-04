@@ -17,8 +17,4 @@
     <None Remove="Views\Home\NewFolder\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\NewFolder\" />
-  </ItemGroup>
-
 </Project>

@@ -1,33 +1,35 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Runtime.InteropServices;
 
 namespace COMP003B.Assignment3.Models
 {
     public class EventRegistration
     {
-        public int Id { get; set; }
+           
 
-        [Required]
-        [MinLength(3)]
-        public string Full Name { get; set; }
+            public int Id { get; set; }
 
-        [Range(0.01, 10000)]
+            [Required]
+            [MinLength(3)]
+            public string Name { get; set; }
 
-        [Required]
+            [Required]
+            [EmailAddress]
+            public string EmailAddress { get; set; }
 
-        public required string Email;
-        [EmailAddress]
+            [Required]
+            [MaxLength(20)]
+            public string EventCode { get; set; }
 
 
-        [Required]
-        public decimal Tickets { get; set }
-        [Range(1, 10);
+            [Required]
+            [Range(1, 10)]
+            public string Tickets{ get; set; }
 
-        [Required]
-        public string Category { get; set; }
+          
+            public string ReferralCode { get; set; }
 
-        [Required]
 
-        
 
+        }
     }
-}
