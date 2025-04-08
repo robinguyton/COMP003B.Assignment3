@@ -6,39 +6,38 @@ namespace COMP003B.Assignment3.Controllers
 
 {
     // The [Route("product")] attribute specifies that the controller will handle requests that start with "/event".
-    [Route("event")]
+
     public class EventController : Controller
     {
 
-        [HttpGet("register/{EventCode}")]
-        public IActionResult Register(string EventCode)
+        [HttpGet("event/register/{EventCode}")]
+        public IActionResult Register([FromRoute] string EventCode)
         {
             //The View method returns a view result that renders a view to the response.
             return View();
         }
 
 
-        [HttpGet("Register")]
+        [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
 
-        [HttpPost("Success")]
-        public IActionResult EventRegistration()
+        [HttpPost]
+        public IActionResult Register([FromForm] EventRegistration model)
         {
             if (!ModelState.IsValid)
             {
-                return View("Success");
+                return View(model);
             }
 
-            return RedirectToAction("Success");
+            return RedirectToAction("Success", model);
         }
 
-        [HttpGet("Success")]
-        public IActionResult Success()
-        { return View(); }
-
+        [HttpGet]
+        public  IActionResult Success(EventRegistration model)
+        { return View(model); }
 
 
 

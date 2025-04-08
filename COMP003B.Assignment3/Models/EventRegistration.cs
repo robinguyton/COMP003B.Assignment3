@@ -27,7 +27,7 @@ namespace COMP003B.Assignment3.Models
             public string Tickets{ get; set; }
 
           
-            public string ReferralCode { get; set; }
+            public string? ReferralCode { get; set; }
 
 
 

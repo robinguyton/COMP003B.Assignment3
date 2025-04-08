@@ -7,6 +7,7 @@
 
 <!-- Create the form -->
 <h2>Event Registration</h2>
+<partial name="_EventNav" />
 <form asp-action="Register" method="post">
 
     <div>
@@ -17,7 +18,7 @@
 
     <div>
         <label asp-for="EmailAddress"></label>
-        <input asp-for="EmailAddress" type="email"  class="form=control" />
+        <input asp-for="EmailAddress" type="email"  class="form-control" />
         <span asp-validation-for="EmailAddress" class="text-danger"></span>
     </div>
     <div>
@@ -41,4 +42,3 @@
 </form>
 
 
-@section Scripts     {<partial name="_EventNav" />}
