@@ -10,7 +10,7 @@ namespace COMP003B.Assignment3.Controllers
     public class EventController : Controller
     {
 
-        [HttpGet("event/register/{EventCode}")]
+        [HttpGet("register/{EventCode}")]
         public IActionResult Register(string EventCode)
         {
             //The View method returns a view result that renders a view to the response.
@@ -18,17 +18,29 @@ namespace COMP003B.Assignment3.Controllers
         }
 
 
-        [HttpGet("Event/Register")]
+        [HttpGet("Register")]
         public IActionResult Register()
         {
             return View();
         }
 
-        [HttpPost("Event/Register")]
+        [HttpPost("Success")]
         public IActionResult EventRegistration()
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return View("Success");
+            }
+
+            return RedirectToAction("Success");
         }
+
+        [HttpGet("Success")]
+        public IActionResult Success()
+        { return View(); }
+
+
+
 
     }
 

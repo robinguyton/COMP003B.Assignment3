@@ -1,10 +1,13 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
 @model COMP003B.Assignment3.Models.EventRegistration
 
 <!-- Create the form -->
 <h2>Event Registration</h2>
-<form asp-action="Create" method="post">
+<form asp-action="Register" method="post">
 
     <div>
         <label asp-for="Name"></label>
